@@ -12,9 +12,13 @@ public class Game {
         reset();
     }
 
-    public void addPlayer(String player) {
-        players.add(player);
-        gains.add(0);
+    public void handle(String player, boolean delete) {
+        if(!delete) {
+            players.add(player);
+            gains.add(0);
+        } else {
+            players.remove(player);
+        }
     }
 
     public void won(String player) {
